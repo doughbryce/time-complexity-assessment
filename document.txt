@@ -1,0 +1,26 @@
+# runtime assessment
+#list
+
+Results for the LargeArray
+* insert 805.665625 ms
+* append 2.137917 ms
+Results for the LargeArray
+* insert 6.298167 ms
+* append 238.041 μs
+Results for the mediumArray
+* insert 115.917 μs
+* append 676.291 μs
+Results for the smallArray
+* insert 5.959 μs
+* append 1.209 μs
+Results for the tinyArray
+* insert 12.833 μs
+* append 1.459 μs
+
+
+How does each function scale:
+* the push function scales at a ridiculously better rate. It has an 0(1) vs the unshift with an 0(n)
+* the time it takes for the unshift function of the extraLargArray is 402 times longer than the push function
+
+Why is unshift so much slower:
+* the unshift is slower because when inserting the values into the beginning of an array, you need to reindex every single other value in the array. For example, if you wanted to put a book in a stack of books at the top, you simply set it on top. But if you were to try and insert it into the bottom of the stack, you would have to move all the books in order for it to work. It gets quite a bit longer when you have thousands of books to move.
